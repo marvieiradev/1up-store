@@ -74,7 +74,3 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
-
-
-
-//@@unique([provider, providerAccountId], name: "provider_providerAccountId")
