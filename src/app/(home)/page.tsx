@@ -23,17 +23,14 @@ export default async function Home() {
   });
 
   return (
-    <div>
-      <PormoBanner
-        src="/banner-home.png"
-        alt="Até 55% de desconto esse mês"
-      />
+    <div className="flex flex-col gap-8">
+      <PormoBanner src="/banner-home.png" alt="Até 55% de desconto esse mês" />
 
-      <div className="mt-8 px-5">
+      <div className="px-5">
         <Categories />
       </div>
 
-      <div className="mt-8">
+      <div>
         <SectionTitle>ofertas</SectionTitle>
         <ProductList products={deals} />
       </div>
@@ -43,7 +40,14 @@ export default async function Home() {
         alt="Até 55% de desconto em Mouses"
       />
 
-      <div className="mt-8">
+      <div>
+        <SectionTitle>teclados</SectionTitle>
+        <ProductList products={keyboards} />
+      </div>
+
+      <PormoBanner src="/banner-fones.png" alt="Até 20% de desconto em Fones" />
+
+      <div>
         <SectionTitle>teclados</SectionTitle>
         <ProductList products={keyboards} />
       </div>
