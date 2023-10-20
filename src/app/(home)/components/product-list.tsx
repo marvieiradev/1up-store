@@ -8,7 +8,7 @@ interface ProductListProps {
 
 const ProductList = ({ products }: ProductListProps) => {
   return (
-    <div className="flex w-full gap-4 overflow-x-auto px-5 [&::-webkit-scrollbar]:hidden">
+    <div className="flex w-full gap-4 overflow-x-auto px-5 list-itens pb-3">
       {products.map((product) => (
         <div key={product.id} className="min-w-[170px] w-[170px]">
           <ProductItem
