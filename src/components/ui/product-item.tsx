@@ -30,7 +30,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
         )}
       </div>
 
-      <div className="flex flex-col gap-1 items-center">
+      <div className="flex flex-col items-center gap-1">
         <p className="overflow-hidden text-ellipsis whitespace-nowrap text-sm">
           {product.name}
         </p>
@@ -46,9 +46,16 @@ const ProductItem = ({ product }: ProductItemProps) => {
               </p>
             </>
           ) : (
-            <p className="font-semibold">
-              R$ {product.totalPrice.toFixed(2)}
-            </p>
+            <p className="font-semibold">R$ {product.totalPrice.toFixed(2)}</p>
+          )}
+        </div>
+
+        <div className="flex justify-center gap-2">
+          <img src="/star.svg" alt="" />
+          {product.discountPercentage > 0 ? (
+            <p className="text-sm">({ Math.floor((100 - product.discountPercentage)/3)})</p>
+          ) : (
+            <p className="text-sm">(25)</p>
           )}
         </div>
       </div>
