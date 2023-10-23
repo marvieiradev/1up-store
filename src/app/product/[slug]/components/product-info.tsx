@@ -76,20 +76,19 @@ const ProductInfo = ({
         Adicionar ao carrinho
       </Button>
 
-      <div className="flex items-center justify-between bg-accent px-5 py-2 mt-5 rounded-lg">
+      <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2">
         <div className="flex items-center gap-2">
           <TruckIcon />
           <div className="flex flex-col">
             <p className="text-sm">
-              Entrega via{" "}
-              <span className="font-bold italic">UP-Packet®</span>
+              Entrega via <span className="font-bold italic">UP-Packet®</span>
             </p>
             <p className="text-sm text-[#8162FF]">
               Envio para <span className="font-bold">todo Brasil</span>
             </p>
           </div>
         </div>
-        <p className="font-bold text-sm">Frete grátis</p>
+        <p className="text-sm font-bold">Frete grátis</p>
       </div>
     </div>
   );
