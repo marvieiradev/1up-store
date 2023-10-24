@@ -47,35 +47,38 @@ const Cart = () => {
           </div>
         </ScrollArea>
       </div>
-      <div className="flex flex-col gap-3">
-        <Separator />
-        <div className="itens-center flex justify-between text-sm">
-          <p>Subtotal</p>
-          <p>R$ {subTotal.toFixed(2)}</p>
-        </div>
-        <Separator />
-        <div className="itens-center flex justify-between text-sm">
-          <p>Entrega</p>
-          <p>GRÁTIS</p>
-        </div>
-        <Separator />
-        <div className="itens-center flex justify-between text-sm opacity-50">
-          <p>Descontos</p>
-          <p>- R$ {totalDiscount.toFixed(2)}</p>
-        </div>
 
-        <Separator />
-        <div className="itens-center flex justify-between font-bold">
-          <p>Total</p>
-          <p>R$ {total.toFixed(2)}</p>
+      {products.length > 0 && (
+        <div className="flex flex-col gap-3">
+          <Separator />
+          <div className="itens-center flex justify-between text-sm">
+            <p>Subtotal</p>
+            <p>R$ {subTotal.toFixed(2)}</p>
+          </div>
+          <Separator />
+          <div className="itens-center flex justify-between text-sm">
+            <p>Entrega</p>
+            <p>GRÁTIS</p>
+          </div>
+          <Separator />
+          <div className="itens-center flex justify-between text-sm opacity-50">
+            <p>Descontos</p>
+            <p>- R$ {totalDiscount.toFixed(2)}</p>
+          </div>
+
+          <Separator />
+          <div className="itens-center flex justify-between font-bold">
+            <p>Total</p>
+            <p>R$ {total.toFixed(2)}</p>
+          </div>
+          <Button
+            className="mt-7 font-bold uppercase"
+            onClick={handleFinishPurchaseClick}
+          >
+            Finalizar compra
+          </Button>
         </div>
-        <Button
-          className="mt-7 font-bold uppercase"
-          onClick={handleFinishPurchaseClick}
-        >
-          Finalizar compra
-        </Button>
-      </div>
+      )}
     </div>
   );
 };
