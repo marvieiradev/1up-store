@@ -47,30 +47,3 @@
     @apply h-full;
   }
 }
-
-.list-itens {
-  scrollbar-width: bold;
-  scrollbar-color: hsl(252 59% 48%);
-}
-
-.list-itens::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-.list-itens::-webkit-scrollbar-track {
-  background: hsl(0 0% 9%);
-}
-
-.list-itens::-webkit-scrollbar-thumb {
-  background-color: hsl(252 59% 48%);
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
