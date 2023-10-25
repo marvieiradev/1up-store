@@ -24,9 +24,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
 import Link from "next/link";
 import Cart from "./cart";
+import DiscountBadge from "./discount-badge";
+import { Badge } from "./badge";
+import { useContext } from "react";
+import { CartContext } from "@/providers/cart";
 
 const Header = () => {
   const { status, data } = useSession();
+  const { products } = useContext(CartContext);
 
   const handleLoginClick = async () => {
     await signIn();
@@ -149,8 +154,13 @@ const Header = () => {
 
       <Sheet>
         <SheetTrigger asChild>
-          <Button size="icon" variant="outline">
+          <Button size="icon" variant="outline" className="relative">
             <ShoppingCartIcon />
+            {products.length > 0 && (
+              <Badge className="absolute text-xs left-6 top-0 py-0 px-1">
+                <span>{products.length}</span>
+              </Badge>
+            )}
           </Button>
         </SheetTrigger>
         <SheetContent className="w-[350px]">
