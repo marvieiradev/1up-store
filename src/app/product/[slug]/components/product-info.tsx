@@ -6,13 +6,16 @@ import { ProductWithTotalPrice } from "@/helpers/products";
 import { CartContext } from "@/providers/cart";
 import { useContext, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+
 
 interface ProductInfoProps {
   product: ProductWithTotalPrice;
 }
 const ProductInfo = ({ product }: ProductInfoProps) => {
   const [quantity, setQuantity] = useState(1);
-  const { addProductToCart } = useContext(CartContext);
+  const { addProductToCart } =
+    useContext(CartContext);
 
   const handleDecreaseQuantityClick = () => {
     setQuantity((prev) => (prev === 1 ? prev : prev - 1));
@@ -23,7 +26,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
   };
 
   const handleAddToCartClick = () => {
-    addProductToCart({...product, quantity});
+    addProductToCart({ ...product, quantity });
   };
 
   return (
@@ -65,9 +68,19 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         <p className="text-justify text-sm opacity-60">{product.description}</p>
       </div>
 
-      <Button className="mt-8 font-bold uppercase" onClick={handleAddToCartClick}>
-        Adicionar ao carrinho
-      </Button>
+      <AlertDialog>
+        <AlertDialogTrigger asChild>
+          <Button className="mt-8 font-bold uppercase">Adicionar ao carrinho</Button>
+        </AlertDialogTrigger>
+        <AlertDialogContent className="flex flex-col border-2 items-center max-w-[400px] rounded-lg text-center">
+          <AlertDialogHeader>
+            <AlertDialogTitle>Produto adicionado ao carrinho</AlertDialogTitle>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={handleAddToCartClick}>Continuar</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
       <div className="mt-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2">
         <div className="flex items-center gap-2">
