@@ -35,8 +35,7 @@ async function OrderPage() {
   return (
     <div className="p-5">
       <Badge
-        className="w-fit gap-1 border-2 border-primary px-3 py-[0.4rem] text-base uppercase"
-        variant="outline"
+        variant="heading"
       >
         <ShoppingBasket size={16} />
         Meus pedidos
