@@ -30,7 +30,7 @@ export default async function Home() {
   });
 
   return (
-    <div className="flex flex-col gap-8 py-8">
+    <div className="flex flex-col gap-8 py-8 lg:px-20">
       <PormoBanner src="/banner-home.png" alt="Até 55% de desconto esse mês" />
 
       <div className="px-5">
