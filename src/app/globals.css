@@ -75,3 +75,6 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.banner {
+  border-radius: 1rem;
+}
