@@ -30,7 +30,7 @@ export default async function Home() {
   });
 
   return (
-    <div className="flex flex-col gap-8 py-8 lg:px-20">
+    <div className="flex flex-col gap-8 py-8 md:px-10 lg:px-20">
       <PromoBanner
         src="/banner-home-2.png"
         alt="Até 55% de desconto esse mês"

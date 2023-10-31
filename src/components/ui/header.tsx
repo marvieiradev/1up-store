@@ -24,7 +24,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
 import Link from "next/link";
 import Cart from "./cart";
-import DiscountBadge from "./discount-badge";
 import { Badge } from "./badge";
 import { useContext } from "react";
 import { CartContext } from "@/providers/cart";
@@ -42,7 +41,7 @@ const Header = () => {
   };
 
   return (
-    <Card className="flex justify-between p-[1.875rem]">
+    <Card className="flex justify-between p-[1.875rem] py-[1rem] md-px-10 lg:px-20 lg:py-[0.5rem] items-center">
       <Sheet>
         <SheetTrigger asChild>
           <Button size="icon" variant="outline">
