@@ -36,7 +36,7 @@ export default async function Home() {
         alt="Até 55% de desconto esse mês"
       />
 
-      <div className="px-5">
+      <div>
         <Categories />
       </div>
 

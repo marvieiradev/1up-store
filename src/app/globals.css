@@ -78,3 +78,9 @@
 .banner {
   border-radius: 1rem;
 }
+.menu {
+  border: 2px solid hsl(252 59% 48%);
+  width: 10rem;
+  padding: .5rem 0;
+  border-radius: 1rem;
+}
