@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <>
       <div suppressHydrationWarning={true}>
-        {innerWidth > 769 ? (
+        {innerWidth! > 769 ? (
           <HeaderLg />
         ) : (
           <HeaderSm />
