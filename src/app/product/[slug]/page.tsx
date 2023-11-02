@@ -35,14 +35,16 @@ const ProductDetailsPage = async ({
 
   if (!product) return null;
   return (
-    <div className="flex flex-col gap-8 pb-8 md:px-10 lg:px-20">
-      <ProductImages imageUrls={product.imageUrls} name={product.name} />
-      <ProductInfo product={computeProductTotalPrice(product)} />
-      <div>
-        <SectionTitle>Produtos recomendados</SectionTitle>
-        <ProductList products={product.category.products} />
+    <>
+      <div className="flex flex-col gap-8 pb-8 md:px-10 lg:px-20 md:mt-5">
+        <ProductImages imageUrls={product.imageUrls} name={product.name} />
+        <ProductInfo product={computeProductTotalPrice(product)} />
+        <div>
+          <SectionTitle>Produtos recomendados</SectionTitle>
+          <ProductList products={product.category.products} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default ProductDetailsPage;

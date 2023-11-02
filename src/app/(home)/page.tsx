@@ -30,39 +30,41 @@ export default async function Home() {
   });
 
   return (
-    <div className="flex flex-col gap-8 py-8 md:px-10 lg:px-20">
-      <PromoBanner
-        src="/banner-home-2.png"
-        alt="Até 55% de desconto esse mês"
-      />
+    <>
+      <div className="flex flex-col gap-8 py-8 md:px-10 lg:px-20">
+        <PromoBanner
+          src="/banner-home-2.png"
+          alt="Até 55% de desconto esse mês"
+        />
 
-      <div>
-        <Categories />
+        <div>
+          <Categories />
+        </div>
+
+        <div>
+          <SectionTitle>ofertas</SectionTitle>
+          <ProductList products={deals} />
+        </div>
+
+        <PromoBanner
+          src="/banner-mouses-2.png"
+          alt="Até 55% de desconto em Mouses"
+        />
+
+        <div>
+          <SectionTitle>teclados</SectionTitle>
+          <ProductList products={keyboards} />
+        </div>
+
+        <PromoBanner
+          src="/banner-fones-2.png"
+          alt="Até 20% de desconto em Fones" />
+
+        <div>
+          <SectionTitle>mouses</SectionTitle>
+          <ProductList products={mouses} />
+        </div>
       </div>
-
-      <div>
-        <SectionTitle>ofertas</SectionTitle>
-        <ProductList products={deals} />
-      </div>
-
-      <PromoBanner
-        src="/banner-mouses-2.png"
-        alt="Até 55% de desconto em Mouses"
-      />
-
-      <div>
-        <SectionTitle>teclados</SectionTitle>
-        <ProductList products={keyboards} />
-      </div>
-
-      <PromoBanner
-        src="/banner-fones-2.png"
-        alt="Até 20% de desconto em Fones" />
-
-      <div>
-        <SectionTitle>mouses</SectionTitle>
-        <ProductList products={mouses} />
-      </div>
-    </div>
+    </>
   );
 }

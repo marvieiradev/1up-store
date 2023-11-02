@@ -14,23 +14,25 @@ const DealsPage = async () => {
   });
 
   return (
-    <div className="flex flex-col gap-8 p-5 md:px-10 lg:px-20">
-      <Badge
-        variant="heading"
-      >
-        <PercentIcon size={16} />
-        Ofertas
-      </Badge>
+    <>
+      <div className="flex flex-col gap-8 p-5 md:px-10 lg:px-20">
+        <Badge
+          variant="heading"
+        >
+          <PercentIcon size={16} />
+          Ofertas
+        </Badge>
 
-      <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 md:px-10 lg:px-20">
-        {deals.map((product) => (
-          <ProductItem
-            key={product.id}
-            product={computeProductTotalPrice(product)}
-          />
-        ))}
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 md:px-10 lg:px-20">
+          {deals.map((product) => (
+            <ProductItem
+              key={product.id}
+              product={computeProductTotalPrice(product)}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
