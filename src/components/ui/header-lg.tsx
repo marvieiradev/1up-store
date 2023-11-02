@@ -8,6 +8,7 @@ import {
   PercentIcon,
   ShoppingBasket,
   ShoppingCartIcon,
+  UserCircle2,
 } from "lucide-react";
 import { Button } from "./button";
 import { Card } from "./card";
@@ -78,7 +79,7 @@ const HeaderLg = () => {
               variant="outline"
               className="w-full justify-center gap-2"
             >
-              <LogInIcon size={16} />
+                <UserCircle2 size={16} />
               Fazer Login
             </Button>
           )}
