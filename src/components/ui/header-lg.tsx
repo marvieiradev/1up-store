@@ -1,7 +1,9 @@
 "use client";
 
 import {
+  BadgePercent,
   HomeIcon,
+  LayoutList,
   ListOrderedIcon,
   LogInIcon,
   LogOutIcon,
@@ -38,13 +40,43 @@ const HeaderLg = () => {
   };
 
   return (
-    <div className="flex flex-col md-px-10 lg:px-20">
-      <Card className="flex justify-between p-[1.875rem] py-[1rem] lg:py-[0.5rem] items-center md:px-10 lg:px-20">
+    <div className="flex flex-col w-full">
+      <Card className="flex justify-between p-[1.875rem] py-[1rem] lg:py-[0.5rem] items-center">
         <Link href="/">
           <h1 className="text-xl font-semibold">
             <span className="font-bold text-primary">1UP</span> Store
           </h1>
         </Link>
+
+        <div className="flex flex-row justify-between py-2 gap-4 xl:gap-16">
+          <Link href="/">
+            <div className="menu justify-center gap-2 flex flex-row items-center">
+              <HomeIcon size={16} />
+              Início
+            </div>
+          </Link>
+
+          <Link href="/orders">
+            <div className="menu justify-center gap-2 flex flex-row items-center">
+              <ShoppingBasket size={16} />
+              Meus Pedidos
+            </div>
+          </Link>
+
+          <Link href="/deals">
+            <div className="menu justify-center gap-2 flex flex-row items-center">
+              <BadgePercent size={18} />
+              Ofertas
+            </div>
+          </Link>
+
+          <Link href="/catalog">
+            <div className="menu justify-center gap-2 flex flex-row items-center">
+              <LayoutList size={16} />
+              Catálogo
+            </div>
+          </Link>
+        </div>
 
         <div className="flex flex-row gap-4">
           {status === "authenticated" && data?.user ? (
@@ -64,11 +96,10 @@ const HeaderLg = () => {
 
                 <Button
                   onClick={handleLogoutClick}
-                  variant="outline"
-                  className="w-[5rem] justify-center gap-1"
+                  variant="ghost"
+                  className="justify-start"
                 >
-                  <LogOutIcon size={14} />
-                  Sair
+                  <LogOutIcon size={20} />
                 </Button>
 
               </div>
@@ -88,7 +119,6 @@ const HeaderLg = () => {
             <SheetTrigger asChild>
               <Button variant="outline" className="relative gap-4">
                 <ShoppingCartIcon />
-                Carrinho
                 {products.length > 0 && (
                   <Badge className="absolute text-xs left-8 top-0 py-0 px-1">
                     <span>{products.length}</span>
@@ -102,36 +132,6 @@ const HeaderLg = () => {
           </Sheet>
         </div>
       </Card>
-
-      <div className="flex flex-row justify-between py-2 md:px-10 lg:px-20">
-        <Link href="/">
-          <div className=" menu justify-center gap-2 flex flex-row items-center">
-            <HomeIcon size={16} />
-            Início
-          </div>
-        </Link>
-
-        <Link href="/orders">
-          <div className="menu justify-center gap-2 flex flex-row items-center">
-            <ShoppingBasket size={16} />
-            Meus Pedidos
-          </div>
-        </Link>
-
-        <Link href="/deals">
-          <div className="menu justify-center gap-2 flex flex-row items-center">
-            <PercentIcon size={16} />
-            Ofertas
-          </div>
-        </Link>
-
-        <Link href="/catalog">
-          <div className="menu justify-center gap-2 flex flex-row items-center">
-            <ListOrderedIcon size={16} />
-            Catálogo
-          </div>
-        </Link>
-      </div>
     </div>
   );
 };

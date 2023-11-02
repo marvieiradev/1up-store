@@ -33,6 +33,7 @@
     --ring: 212.7 26.8% 83.9%;
 
     --radius: 0.5rem;
+    --darker: 0 2% 0%;
   }
 }
 
@@ -40,9 +41,11 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply h-full bg-background text-foreground;
   }
+
   html {
     @apply h-full;
   }
@@ -75,12 +78,16 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .banner {
   border-radius: 1rem;
 }
+
 .menu {
-  border: 2px solid hsl(252 59% 48%);
-  width: 10rem;
-  padding: .5rem 0;
-  border-radius: 1rem;
+  border-top: .3rem solid transparent;
+    padding: .5rem;
+  }
+  
+  .menu:hover {
+    border-top: .3rem solid hsl(252 59% 48%);
 }

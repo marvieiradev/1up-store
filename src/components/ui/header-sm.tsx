@@ -1,7 +1,9 @@
 "use client";
 
 import {
+  BadgePercent,
   HomeIcon,
+  LayoutList,
   ListOrderedIcon,
   LogInIcon,
   LogOutIcon,
@@ -43,7 +45,7 @@ const HeaderSm = () => {
 
   return (
     <div>
-      <Card className="flex justify-between p-[1.875rem] py-[1rem] md-px-10 lg:px-20 lg:py-[0.5rem] items-center">
+      <Card className="flex justify-between p-[1.875rem] py-[1rem] lg:py-[0.5rem] items-center">
         <Sheet>
           <SheetTrigger asChild>
             <Button size="icon" variant="outline">
@@ -127,7 +129,7 @@ const HeaderSm = () => {
                     variant="outline"
                     className="w-full justify-start gap-2"
                   >
-                    <PercentIcon size={16} />
+                    <BadgePercent size={18} />
                     Ofertas
                   </Button>
                 </Link>
@@ -139,7 +141,7 @@ const HeaderSm = () => {
                     variant="outline"
                     className="w-full justify-start gap-2"
                   >
-                    <ListOrderedIcon size={16} />
+                    <LayoutList size={16} />
                     Catálogo
                   </Button>
                 </Link>
