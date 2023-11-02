@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import useWindowSize from "@rooks/use-window-size"
 
 const Header = () => {
-  const router = useRouter();
+  /*const router = useRouter();
   const { innerWidth } = useWindowSize();
   const resizes = () => {
     router.refresh();
@@ -16,8 +16,8 @@ const Header = () => {
     window.addEventListener("resize", resizes);
   }
 
-  return (
-    <>
+  /*
+  <>
       <div suppressHydrationWarning={true}>
         {innerWidth! > 769 ? (
           <HeaderLg />
@@ -25,6 +25,19 @@ const Header = () => {
           <HeaderSm />
         )}
       </div>
+    </>
+   */
+
+  return (
+    <>
+      <div className="hidden lg:flex">
+        <HeaderLg />
+      </div>
+
+      <div className="lg:hidden w-full">
+        <HeaderSm />
+      </div>
+
     </>
   );
 };
