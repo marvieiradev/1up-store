@@ -37,6 +37,7 @@ async function OrderPage() {
       <div className="p-5 md:px-10 lg:px-20">
         <Badge
           variant="heading"
+          className="md:ml-10 lg:ml-20"
         >
           <ShoppingBasket size={16} />
           Meus pedidos

@@ -10,6 +10,7 @@ const CatalogPage = async () => {
       <div className="flex flex-col gap-8 p-5 md:px-10 lg:px-20">
         <Badge
           variant="heading"
+          className="md:ml-10 lg:ml-20"
         >
           <LayoutList size={16} />
           Catálogo
