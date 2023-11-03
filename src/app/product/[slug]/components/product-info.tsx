@@ -79,7 +79,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
               <AlertDialogTitle>Produto adicionado ao carrinho!</AlertDialogTitle>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <Link href="#top">
+              <Link href={`/product/${product.slug}`}>
                 <AlertDialogAction onClick={handleAddToCartClick}>Continuar</AlertDialogAction>
               </Link>
             </AlertDialogFooter>

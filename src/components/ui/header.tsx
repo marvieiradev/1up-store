@@ -6,6 +6,7 @@ import HeaderSm from "./header-sm";
 const Header = () => {
   return (
     <>
+
       <div className="hidden lg:flex">
         <HeaderLg />
       </div>
