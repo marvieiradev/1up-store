@@ -80,7 +80,9 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <Link href={`/product/${product.slug}`}>
-                <AlertDialogAction onClick={handleAddToCartClick}>Continuar</AlertDialogAction>
+                <AlertDialogAction onClick={handleAddToCartClick}>
+                  Continuar
+                </AlertDialogAction>
               </Link>
             </AlertDialogFooter>
           </AlertDialogContent>
