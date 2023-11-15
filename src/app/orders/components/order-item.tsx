@@ -58,7 +58,7 @@ const OrderItem = ({ order }: OrderItemProps) => {
               <div className="flex items-center justify-between">
                 <div className="font-bold">
                   <p className="font-bold uppercase">Status</p>
-                  <p className="text-[#8162ff] uppercase">{getOrderStatus(order.status)}</p>
+                  <p className="text-[#03ad36] uppercase">{getOrderStatus(order.status)}</p>
                 </div>
 
                 <div>

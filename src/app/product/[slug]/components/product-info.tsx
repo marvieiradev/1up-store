@@ -95,7 +95,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
               <p className="text-sm">
                 Entrega via <span className="font-bold italic">UP-Packet®</span>
               </p>
-              <p className="text-sm text-[#8162FF]">
+              <p className="text-sm text-[#03ad36]">
                 Envio para <span className="font-bold">todo Brasil</span>
               </p>
             </div>
