@@ -11,20 +11,22 @@ import { createCheckout } from "@/actions/checkout";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSession } from "next-auth/react";
 import { createOrder } from "@/actions/order";
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import Link from "next/link";
 
 const Cart = () => {
   const { data } = useSession();
   const { products, subTotal, total, totalDiscount } = useContext(CartContext);
 
   const handleFinishPurchaseClick = async () => {
-    if(!data?.user){
+    if (!data?.user) {
       //redirecionar para o login
       return
     }
-    
+
     const order = await createOrder(products, (data?.user as any).id);
 
-    const checkout = await createCheckout(products,  order.id);
+    const checkout = await createCheckout(products, order.id);
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
     stripe?.redirectToCheckout({
       sessionId: checkout.id,
@@ -80,12 +82,37 @@ const Cart = () => {
             <p>Total</p>
             <p>R$ {total.toFixed(2)}</p>
           </div>
-          <Button
+
+
+          {/*TESTE */}
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button className="mt-7 font-bold uppercase">Finalizar compra</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent className="flex flex-col border-2 items-center max-w-[400px] rounded-lg text-center">
+              <AlertDialogHeader>
+                <AlertDialogTitle className="text-center">Esta função está temporiamente indisponível!</AlertDialogTitle>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogAction>
+                  Continuar
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
+
+
+
+          {
+            //desativar a compra temporariamente
+          /* <Button
             className="mt-7 font-bold uppercase"
             onClick={handleFinishPurchaseClick}
           >
             Finalizar compra
-          </Button>
+          </Button>*/}
+
         </div>
       )}
     </div>
